@@ -1,0 +1,22 @@
+{
+  "name": "astro-ixmage",
+  "version": "0.1.1",
+  "description": "Optimize your site images - ixmage.com",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./ixmage": "./Ixmage.astro"
+  },
+  "scripts": {
+    "test": "echo \"Error: no tests available\" && exit 1"
+  },
+  "author": "readonlycihld",
+  "license": "MIT",
+  "keywords": [
+    "astro-component",
+    "seo",
+    "performance",
+    "ixmage"
+  ]
+}
