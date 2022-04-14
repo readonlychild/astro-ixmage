@@ -2,6 +2,8 @@
 
 Astro component that makes working with [ixmage.com](https://www.ixmage.com) easier.
 
+:cupcake: This component will put your images on a CDN, and optimize them for size, even turn them into `webp` when appropriate.
+
 ## Installation
 
 ```js
