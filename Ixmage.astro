@@ -1,0 +1,59 @@
+---
+let src = Astro.props.src;
+let token = Astro.props.token;
+let width = Astro.props.width;
+let height = Astro.props.height;
+let alt = Astro.props.alt || '';
+let title = Astro.props.title || alt || '';
+
+let bgc = Astro.props.bgc || 'transparent';
+let format = Astro.props.format || '';
+let flip = Astro.props.flip || false;
+let flop = Astro.props.flop || false;
+let quality = Astro.props.quality || 0;
+let behavior = Astro.props.behavior || '';
+let allowenl = Astro.props.allowenl || false;
+let sharpen = Astro.props.sharpen || false;
+let dpr = Astro.props.dpr || false;
+let pixelate = Astro.props.pixelate || 0;
+let blur = Astro.props.blur || 0;
+
+let brightness = Astro.props.brightness || 0;
+let hue = Astro.props.hue || 0;
+let saturation = Astro.props.saturation || 0;
+
+let sepia = Astro.props.sepia || 0;
+let grayscale = Astro.props.grayscale || false;
+
+
+function url() {
+  const base = 'https://cdn.ixmage.com/v2/';
+  let xfs = '?v=1';
+  if (width) xfs += `&w=${width}`;
+  if (height) xfs += `&h=${height}`;
+  if (format.toLowerCase() === 'jpg') xfs += `&fmt=jpg`;
+  if (format.toLowerCase() === 'png') xfs += `&fmt=png`;
+  if (format.toLowerCase() === 'gif') xfs += `&fmt=gif`;
+  if (format.toLowerCase() === 'webp') xfs += `&fmt=webp`;
+  if (allowenl) xfs += `&allowenl=1`;
+  if (sharpen) xfs += `&sharp=1`;
+  if (flip) xfs += `&flip=1`;
+  if (flop) xfs += `&flop=1`;
+  if (quality) xfs += `&q=${quality}`;
+  if (behavior.toLowerCase() === 'extend') xfs += `&extend=1`;
+  if (behavior.toLowerCase() === 'cover') xfs += `&cover=1`;
+  if (dpr) xfs += `&dpr=${dpr}`;
+  if (pixelate) xfs += `&pixelate=${pixelate}`;
+  if (blur) xfs += `&blur=${blur}`;
+  if (brightness) xfs += `&mod=${brightness}`;
+  if (hue) xfs += `&hue=${hue}`;
+  if (saturation) xfs += `&sat=${saturation}`;
+  if (sepia) xfs += `&sepia=${sepia}`;
+  if (grayscale) xfs += `&grey=1`;
+  xfs += `&bgc=${bgc}`;
+  return base + token + '/' + src + xfs;
+}
+
+let theurl = url();
+---
+<img src={theurl} width={width} height={height} alt={alt} title={title} />
