@@ -6,11 +6,11 @@ This component has been refactored to allow usage of other "Image CDN" solutions
 
 The requirement that permits a service to be able to fit into this component, as a new provider, is that the service can transform images using a `querystring` API.
 
-i.e. `&width=200&height=120` or `.../w_200,h_120/...`
+i.e. `&width=200&height=120` or `../w_200,h_120/..` or similar.
 
 # Providers
 
-The provider model only needs to implement and export one function `getImage(options)`.
+The provider model only needs to implement and export one function `getImage(options)`; this function returns the correct URL to the image.
 
 Current functional providers:
 
@@ -20,7 +20,9 @@ Current functional providers:
 
 :cupcake: This component will...
 
-- Most of these services will put your images on a CDN, and optimize them for size, even turn them into `webp` when appropriate.
+- Most of these services will put your images on a CDN, 
+- optimize images for size, 
+- even turn them into `webp` when appropriate.
 
 # Installation
 
@@ -109,7 +111,11 @@ I also uploaded the image to a [sanity.io](https://www.sanity.io/) account. It g
 
 
 
-----
 
+
+# To Dos
+
+- [ ] `srcset` for image switching between devices
+- :thinking:
 
 
