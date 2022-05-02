@@ -66,6 +66,10 @@ setup: |
 
 # Examples
 
+Original image, sized 200 width:
+
+![original](https://cdn.ixmage.com/v2/TQKkCpGYGK/bucket1/demo/wall.jpg?w=200)
+
 ## ixmage
 
 My image accessed thru the [ixmage](https://www.ixmage.com) service
@@ -77,6 +81,8 @@ My image accessed thru the [ixmage](https://www.ixmage.com) service
   alt="demo wall image"
 />
 ```
+
+![using-ixmage](https://cdn.ixmage.com/v2/TQKkCpGYGK/bucket1/demo/wall.jpg?v=astro&bgc=_00ff00&w=200&h=200&flop=true)
 
 <Ixmage cls="me-2" token="TQKkCpGYGK" w="200" h="200" bgc="_00ff00" src="bucket1/demo/wall.jpg" flop={true} alt="demo wall image" />
 
@@ -92,6 +98,8 @@ I uploaded the same image to my [cloudinary](https://www.cloudinary.com) account
 />
 ```
 
+![using-cloudinary](https://res.cloudinary.com/batousai/image/upload/w_200,h_200,a_hflip,b_rgb:00ff00,f_auto,q_auto,c_lpad/demo/wall.jpg)
+
 <Ixmage cls="me-2" token="batousai" width="200" height="200" bgc="00ff00" src="demo/wall.jpg" flop={true} provider="cloudinary" crop="lpad" alt="demo wall image" />
 
 ## sanity.io
@@ -105,6 +113,8 @@ I also uploaded the image to a [sanity.io](https://www.sanity.io/) account. It g
   alt="demo wall image"
 />
 ```
+
+![using-sanity](https://cdn.sanity.io/images/qg0lypr0/production/4450124c33af1267f4def68cc220c7c0ffb56185-1200x900.jpg?v=astro&w=200&h=200&bg=ff00ff00&flip=h&fit=fill&auto=format)
 
 <Ixmage cls="me-2" token="qg0lypr0" w="200" h="200" bg="ff00ff00" src="4450124c33af1267f4def68cc220c7c0ffb56185-1200x900.jpg" flip="h" provider="sanity" fit="fill" alt="demo wall image" />
 
