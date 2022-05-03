@@ -34,7 +34,7 @@ export function getImage (options) {
   delete options['bgc']
   if (options.namedbgc) xfs.push(`b_${options.bgc}`);
   delete options['namedbgc'];
-  if (options.dpr) xfs.push(`d${options.dpr}`);
+  if (options.dpr) xfs.push(`d_${options.dpr}`);
   delete options['dpr'];
   if (options.blur) xfs.push(`e_blur:${options.blur}`);
   delete options['blur'];
