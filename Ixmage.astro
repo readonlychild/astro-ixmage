@@ -1,9 +1,8 @@
 ---
 import { providers, config } from './IxmageEngine.js';
-let provider = Astro.props.provider || config.provider || 'ixmage';
+let { provider, cls, alt, title, ...options } = Astro.props;
+if (!provider) provider = config.provider || 'ixmage';
 const getImage = providers[provider];
-
-let { cls, alt, title, ...options } = Astro.props;
 
 function url() { return getImage(options); }
 

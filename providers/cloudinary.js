@@ -58,7 +58,6 @@ export function getImage (options) {
   let src = options.src;
   delete options['src'];
   delete options['token'];
-  delete options['provider'];
   delete options['cloudname'];
 
   for (let prop in options) {

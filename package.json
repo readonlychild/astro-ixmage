@@ -1,6 +1,6 @@
 {
   "name": "astro-ixmage",
-  "version": "0.1.4",
+  "version": "0.2.2",
   "description": "Optimize your site images - ixmage.com",
   "homepage": "https://github.com/readonlychild/astro-ixmage#readme",
   "main": "index.js",

@@ -1,4 +1,4 @@
-import config from './Ixmage.json';
+import config from './../../ixmage.config.mjs';
 import {getImage as ixmage} from './providers/ixmage.js';
 import {getImage as cloudinary} from './providers/cloudinary.js';
 import {getImage as sanity} from './providers/sanity.js';

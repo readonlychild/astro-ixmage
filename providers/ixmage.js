@@ -1,6 +1,7 @@
 export function getImage (options) {
   const baseUri = `https://cdn.ixmage.com/v2/${options.token}`;
   let src = options.src;
+  delete options['src'];
   let xfs ='?v=astro';
   if (options.format) {
     if (options.format.toLowerCase() === 'jpg') xfs += `&fmt=jpg`;
@@ -16,7 +17,6 @@ export function getImage (options) {
   delete options['behavior'];
   xfs += `&bgc=${options.bgc || 'transparent'}`;
   delete options['bgc'];
-  delete options['provider'];
 
   for (let prop in options) {
     xfs += `&${prop}=${options[prop]}`;

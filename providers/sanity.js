@@ -10,7 +10,6 @@ export function getImage (options) {
   
   delete options['src'];
   delete options['token'];
-  delete options['provider'];
 
   for (let prop in options) {
     xfs += `&${prop}=${options[prop]}`;

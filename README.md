@@ -37,6 +37,19 @@ This is a build-time component that will render out `<img>` markup to the client
 Import into your other components or pages  
 _(or `.md` files using the `setup` field)_
 
+## Setup of default values
+
+You are required to create a file named `ixmage.config.mjs` in your project root folder.  The file will be a sibling to `astro.config.mjs`
+
+The file contents will be
+
+```js
+export default {
+  "provider": "ixmage"
+};
+```
+where you can specify the default `provider` like `ixmage` or `cloudinary`, etc.
+
 ## frontmatter setup
 
 ### Astro Components
