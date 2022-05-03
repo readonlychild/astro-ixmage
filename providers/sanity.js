@@ -12,7 +12,9 @@ export function getImage (options) {
   delete options['token'];
 
   for (let prop in options) {
-    xfs += `&${prop}=${options[prop]}`;
+    if (options[prop]) {
+      xfs += `&${prop}=${options[prop]}`;
+    }
   }
 
   return baseUri + '/' + src + xfs;

@@ -6,14 +6,26 @@ export function getImage (options) {
   baseUri += `/${options.delivery || 'upload'}`;
   
   let xfs = [];
-  if (options.width) xfs.push(`w_${options.width}`);
-  if (options.height) xfs.push(`h_${options.height}`);
-  if (options.w) xfs.push(`w_${options.w}`);
-  if (options.h) xfs.push(`h_${options.h}`);
-  delete options['width'];
-  delete options['w'];
-  delete options['height'];
-  delete options['h'];
+  if (options.width) {
+    xfs.push(`w_${options.width}`);
+    delete options['width'];
+    delete options['w'];
+  }
+  if (options.height) {
+    xfs.push(`h_${options.height}`);
+    delete options['height'];
+    delete options['h'];
+  }
+  if (options.w) {
+    xfs.push(`w_${options.w}`);
+    delete options['width'];
+    delete options['w'];
+  }
+  if (options.h) {
+    xfs.push(`h_${options.h}`);
+    delete options['height'];
+    delete options['h'];
+  }
   if (options.flip) xfs.push(`a_vflip`);
   if (options.flop) xfs.push(`a_hflip`);
   delete options['flip'];

@@ -1,11 +1,28 @@
 ---
 import { providers, config } from './IxmageEngine.js';
-let { provider, cls, alt, title, ...options } = Astro.props;
+let { provider, cls, alt, title, loading, srcset, src, ...options } = Astro.props;
 if (!provider) provider = config.provider || 'ixmage';
 const getImage = providers[provider];
 
-function url() { return getImage(options); }
+options.src = src;
+let w = options.width || options.w;
+let h = options.height || options.h;
+
+function url() { return getImage(JSON.parse(JSON.stringify(options))); }
 
 let theurl = url();
+if (srcset) {
+  let widths = srcset.split(',');
+  let set = [];
+  delete options['height'];
+  delete options['h'];
+  widths.forEach((ssw) => {
+    options.width = ssw;
+    options.w = ssw;
+    options.src = src;  
+    set.push(`${getImage(JSON.parse(JSON.stringify(options)))} ${ssw}w`);
+  });
+  srcset = set.join(',');
+}
 ---
-<img class={cls || ''} src={theurl} width={options.width || options.w} height={options.height || options.h} alt={alt || title || ''} title={title || alt || ''} />
+<img class={cls || ''} src={theurl} srcset={srcset} width={w} height={h} alt={alt || title || ''} title={title || alt || ''} loading={loading} />
