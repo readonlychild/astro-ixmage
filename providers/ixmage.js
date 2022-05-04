@@ -2,6 +2,7 @@ export function getImage (options) {
   const baseUri = `https://cdn.ixmage.com/v2/${options.token}`;
   let src = options.src;
   delete options['src'];
+  delete options['token'];
   let xfs ='?v=astro';
   if (options.format) {
     if (options.format.toLowerCase() === 'jpg') xfs += `&fmt=jpg`;
